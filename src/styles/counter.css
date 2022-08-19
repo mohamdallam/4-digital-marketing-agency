@@ -1,0 +1,16 @@
+.conter__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.counter__item {
+  width: 25%;
+}
+
+.counter__number {
+  background: var(--counter-color);
+  background-size: 100% 100%;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
