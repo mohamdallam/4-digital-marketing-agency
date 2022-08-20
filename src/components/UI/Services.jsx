@@ -39,7 +39,7 @@ const Services = () => {
 
         <div className="service__item-wrapper">
           {SERVICE__DATA.map((item, index) => (
-            <div className="services__item">
+            <div className="services__item" key={index}>
               <span className="service__icon">
                 <i className={item.icon}></i>
               </span>
