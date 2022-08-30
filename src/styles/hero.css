@@ -46,9 +46,14 @@
 .primary__btn {
   background: var(--btn-primary-bg);
   border: 1px solid var(--btn-secondary-bg);
+  color: #090238;
 }
 
 .secondary__btn {
   background: var(--btn-secondary-bg);
   border: 1px solid var(--btn-primary-bg);
+}
+
+.hero__img img {
+  width: 100%;
 }
