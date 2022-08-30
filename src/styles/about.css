@@ -47,3 +47,7 @@
   object-fit: cover;
   border-radius: 0.8rem;
 }
+
+.light-theme .choose__us-title {
+  color: #0c123d;
+}

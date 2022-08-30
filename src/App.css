@@ -114,3 +114,7 @@ section {
 .light-theme a {
   font-weight: 500;
 }
+
+.light-theme .team__img {
+  background: #ddd;
+}

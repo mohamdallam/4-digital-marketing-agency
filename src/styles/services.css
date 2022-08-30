@@ -42,3 +42,11 @@
   font-size: 1.3rem;
   margin-bottom: 30px;
 }
+
+.light-theme .service__icon {
+  background-color: var(--primary-color);
+}
+
+.light-theme .service__icon i {
+  color: #fff;
+}

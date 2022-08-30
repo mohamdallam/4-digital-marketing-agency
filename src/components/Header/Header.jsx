@@ -1,5 +1,5 @@
 import "./header.css";
-import React from "react";
+import React, { useRef } from "react";
 
 const NAV__LINKS = [
   {

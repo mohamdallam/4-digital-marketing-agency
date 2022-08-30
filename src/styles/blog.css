@@ -42,3 +42,11 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.light-theme .blog {
+  background: #effcff;
+}
+
+.light-theme .blog__item {
+  box-shadow: 5px 5px 15px -5px #999;
+}
