@@ -53,4 +53,22 @@
   top: 0;
   left: 0;
   z-index: 9999;
+  background: #0c123d;
 }
+
+.light-theme .header__shrink {
+  background: #f7f7f7;
+}
+
+.mobile__menu {
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: none;
+}
+
+.light-theme .mobile__menu {
+  color: #000;
+}
+
+/* ========= Responsive ========= */

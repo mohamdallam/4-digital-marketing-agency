@@ -1,5 +1,5 @@
 import "./header.css";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 
 const NAV__LINKS = [
   {
@@ -29,27 +29,56 @@ const NAV__LINKS = [
 ];
 
 const Header = ({ theme, toggletheme }) => {
+  const headerRef = useRef(null);
+
+  const headerFun = () => {
+    if (document.body.scrollTo > 80 || document.documentElement.scrollTo > 80) {
+      headerRef.current.classList.add("header__shrink");
+    } else {
+      headerRef.current.classList.remove("header__shrink");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", headerFun);
+    return () => window.removeEventListener("scroll", headerFun);
+  }, []);
+
+  // Scroll space
+  const handleClick = (e) => {
+    e.preventDefault();
+    const targetAtt = e.target.getAttribute("href");
+    const location = document.querySelector(targetAtt).offsetTop;
+
+    window.scrollTo({
+      left: 0,
+      top: location - 50,
+    });
+  };
+
   return (
-    <header className="header">
+    <header className="header" ref={headerRef}>
       <div className="container">
         <div className="nav__wrapper">
           <div className="logo">
             <h2>Digency</h2>
           </div>
-
           {/* ============= Navigation ============= */}
           <div className="navigation">
             <ul className="menu">
               {NAV__LINKS.map((item, index) => (
                 <li className="menu__item" key={index}>
-                  <a href={item.path} className="menu__link">
+                  <a
+                    href={item.path}
+                    onClick={handleClick}
+                    className="menu__link"
+                  >
                     {item.display}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
-
           {/*=============   Light Mode =========== */}
           <div className="light__mode">
             <span onClick={toggletheme}>
@@ -64,6 +93,10 @@ const Header = ({ theme, toggletheme }) => {
               )}
             </span>
           </div>
+
+          <span className="mobile__menu">
+            <i className="ri-menu-line"></i>
+          </span>
         </div>
       </div>
     </header>
