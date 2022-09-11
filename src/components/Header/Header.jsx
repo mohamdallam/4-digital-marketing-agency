@@ -32,11 +32,13 @@ const Header = ({ theme, toggletheme }) => {
   const headerRef = useRef(null);
 
   const headerFun = () => {
-    if (document.body.scrollTo > 80 || document.documentElement.scrollTo > 80) {
-      headerRef.current.classList.add("header__shrink");
-    } else {
-      headerRef.current.classList.remove("header__shrink");
-    }
+    headerRef.current.classList.add("header__shrink");
+
+    // if (document.body.scrollTo > 80 || document.documentElement.scrollTo > 80) {
+    //   headerRef.current.classList.add("header__shrink");
+    // } else {
+    //   headerRef.current.classList.remove("header__shrink");
+    // }
   };
 
   useEffect(() => {
@@ -56,6 +58,9 @@ const Header = ({ theme, toggletheme }) => {
     });
   };
 
+  const menuRef = useRef(null);
+  const toggleMenu = () => menuRef.current.classList.toggle("menu__active");
+
   return (
     <header className="header" ref={headerRef}>
       <div className="container">
@@ -64,7 +69,7 @@ const Header = ({ theme, toggletheme }) => {
             <h2>Digency</h2>
           </div>
           {/* ============= Navigation ============= */}
-          <div className="navigation">
+          <div className="navigation" ref={menuRef} onClick={toggleMenu}>
             <ul className="menu">
               {NAV__LINKS.map((item, index) => (
                 <li className="menu__item" key={index}>
@@ -94,7 +99,8 @@ const Header = ({ theme, toggletheme }) => {
             </span>
           </div>
 
-          <span className="mobile__menu">
+          {/*=============   SideBar Mobile Menu =========== */}
+          <span className="mobile__menu" onClick={toggleMenu}>
             <i className="ri-menu-line"></i>
           </span>
         </div>

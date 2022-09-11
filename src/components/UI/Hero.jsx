@@ -1,5 +1,6 @@
 import "../../styles/hero.css";
 import React from "react";
+
 import heroDarkImg from "../../assets/images/hero-img.png";
 import lightImg from "../../assets/images/light-hero-bg.jpg";
 
